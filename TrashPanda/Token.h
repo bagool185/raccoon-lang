@@ -11,6 +11,8 @@
 
 namespace RCC {
 
+    typedef const std::string ct_str;
+
     enum class OperatorTypes {
         // unary
         OT_INCREMENT, // ++
@@ -56,12 +58,12 @@ namespace RCC {
     };
     /* comparator for std::map */
     struct comparator {
-        bool operator() (const std::string& x, const std::string& y) {
+        bool operator() (ct_str& x, ct_str& y) const {
             return x < y;
         }
     };
 
-    const std::map<const std::string, const OperatorTypes, comparator> mapped_operators {
+    const std::map<ct_str, const OperatorTypes, comparator> mapped_operators {
         // unary
         { "++", OperatorTypes::OT_INCREMENT },    // ++
         { "--", OperatorTypes::OT_DECREMENT },    // --
@@ -89,7 +91,7 @@ namespace RCC {
         { ",",  OperatorTypes::OT_COMMA },	    // ,
     };
 
-    const std::map<const std::string, const KeywordTypes, comparator> mapped_keywords {
+    const std::map<ct_str, const KeywordTypes, comparator> mapped_keywords {
         { "let",      KeywordTypes::KT_DECL  },	 // let - declaration
         { "function", KeywordTypes::KT_FUNC  },	 // function
         { "if",       KeywordTypes::KT_IF	 },  // if statement
@@ -116,7 +118,7 @@ namespace RCC {
         std::string _token_name = "";
         TokenType _token_type;
     public:
-        Token(const std::string& token_type);
+        Token(ct_str& token_type);
         const std::string get_token_name() { return _token_name; }
         const TokenType get_token_type() { return _token_type; }
         inline bool is_set();
