@@ -28,7 +28,7 @@ static inline void trim(std::string &s) {
     rtrim(s);
 }
 /* split a string by a given delimiter */
-static inline vect_s split(std::string &s, const char delimiter) {
+static inline vect_s split(std::string &s, const char delimiter=' ') {
     /**
      * @param s: string to be split
      * @param delimiter: delimiter by which the string will be split

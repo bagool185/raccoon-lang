@@ -1,8 +1,12 @@
 #include <iostream>
 
+#include "TrashPanda/Lexer.h"
 
 int main() {
 
-    std::cout << "Hello, World!" << std::endl;
+    RCC::Lexer test_lexer("../Tests/test_tokens.rcc");
+
+    test_lexer.tokenise();
+
     return 0;
 }

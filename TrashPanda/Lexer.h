@@ -16,15 +16,15 @@ namespace RCC {
     typedef std::vector<std::string> vect_s;
 
     class Lexer {
-        ct_str& _data_filename = nullptr;
+        std::string _data_filename = nullptr;
         vect_s _data;
         std::stack<Token> _token_stack;
         // prevent the creation of default constructor
-        Lexer() {}
+        explicit Lexer() {}
         void _populate_data();
 
     public:
-        Lexer(ct_s& data_filename) : _data_filename(data_filename){}
+        explicit Lexer(ct_str& data_filename) : _data_filename(data_filename){}
         void tokenise();
         vect_s get_data() { return _data; }
     };

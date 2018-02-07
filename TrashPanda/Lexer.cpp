@@ -15,7 +15,14 @@ void Lexer::_populate_data() {
     std::ifstream instream(_data_filename);
     std::string line;
 
-    while (instream >> line) {
+    while (std::getline(instream, line)) {
+        // if line is not empty
+        /* TODO: don't add empty lines
+        trim(line);
+        if (line.length() > 0) {
+            _data.push_back(line);
+        }
+         */
         _data.push_back(line);
     }
 
@@ -29,7 +36,18 @@ void Lexer::tokenise() {
     _populate_data();
     vect_s data_copy = get_data();
 
-    for (const std::string& line : data_copy) {
-        printf("#%s#\n", line.c_str());
+    for (std::string& line : data_copy) {
+        vect_s split_line = split(line, ' ');
+
+        for (ct_str& token : split_line) {
+
+            if (token[0] == token[1] && token[0] == '/') {
+                break;
+            }
+
+            Token new_token(token);
+            _token_stack.push(new_token);
+            new_token.print();
+        }
     }
 }

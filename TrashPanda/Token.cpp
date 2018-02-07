@@ -9,16 +9,8 @@
 
 using namespace RCC;
 
-class E : public std::exception {
-    const char *_msg;
-    E() {}
 
-public:
-    E (const char* msg): _msg(msg) {}
-    const char *what() const throw() { return _msg; }
-};
 
-E e_invalid_token("Invalid token name");
 
 inline bool Token::is_set() {
     // first character is \0 <=> string is empty
@@ -66,11 +58,11 @@ Token::Token(ct_str& token_name) {
         }
         else {
             printf("#%s#", token_name);
-            throw e_invalid_token;
+            throw E("Invalid token name");
         }
     }
 }
 
 void Token::print() {
-    printf("Token: #%s#\n\n", _token_name.c_str());
+    printf("Token: #%s#\n", _token_name.c_str());
 }
