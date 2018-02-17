@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 typedef std::vector<std::string> vect_s;
 

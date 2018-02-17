@@ -2,15 +2,12 @@
 // Created by bagool on 07/02/2018.
 //
 
-#include <exception>
 #include <cstdio>
 
 #include "Token.h"
+#include "../Common/Util/ExceptionHandlingUtil.h"
 
 using namespace RCC;
-
-
-
 
 inline bool Token::is_set() {
     // first character is \0 <=> string is empty

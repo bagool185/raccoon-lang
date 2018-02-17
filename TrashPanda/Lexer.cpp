@@ -5,6 +5,8 @@
 
 #include "Lexer.h"
 #include "../Common/Util/StringUtil.h"
+#include "../Common/Util/ExceptionHandlingUtil.h"
+#include "../Common/Util/LogUtil.h"
 
 #define COMMENT "//"
 
@@ -36,6 +38,8 @@ void Lexer::tokenise() {
     _populate_data();
     vect_s data_copy = get_data();
 
+    Log::load_log({LogLevel::INFO, "iterating through tokens"});
+
     for (std::string& line : data_copy) {
         vect_s split_line = split(line, ' ');
 
@@ -45,9 +49,14 @@ void Lexer::tokenise() {
                 break;
             }
 
-            Token new_token(token);
-            _token_stack.push(new_token);
-            new_token.print();
+            Log::load_log({LogLevel::DEBUG, token.c_str()});
+
+            try {
+                Token new_token(token);
+                _token_stack.push(new_token);
+            }
+            catch (std::exception& e) {
+            }
         }
     }
 }
