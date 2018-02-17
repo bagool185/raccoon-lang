@@ -20,7 +20,7 @@ namespace RCC {
         vect_s _data;
         std::stack<Token> _token_stack;
         // prevent the creation of default constructor
-        explicit Lexer() {}
+        explicit Lexer() = default;
         void _populate_data();
 
     public:

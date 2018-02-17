@@ -4,7 +4,6 @@
 #include <cstdio>
 #include <fstream>
 #include <algorithm>
-#include <cstdlib>
 
 #include "LogUtil.h"
 
