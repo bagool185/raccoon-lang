@@ -44,7 +44,7 @@ Log::~Log() {
 }
 
 void Log::save_logs() {
-    std::string log_filename;
+    const char* log_filename = "log_file";
     std::string crt_time;
 
     time_t rawtime;
@@ -57,10 +57,9 @@ void Log::save_logs() {
 
     try {
         load_log({LogLevel::INFO, "iterating through logs"});
-        log_filename = "log_file";
-        load_log({LogLevel::DEBUG, log_filename.c_str()});
+        load_log({LogLevel::DEBUG, log_filename});
 
-        FILE* log_file = fopen(log_filename.c_str(), "w");
+        FILE* log_file = fopen(log_filename, "w");
 
         for (const auto& _ : _logs) {
             fprintf(log_file, ("%s %s\n", _log_to_string(_.first), _.second ));
