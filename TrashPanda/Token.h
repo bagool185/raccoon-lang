@@ -102,7 +102,7 @@ namespace RCC {
 
     const std::regex decimal_literals("[0-9]*\\.?[0-9]+");
     const std::regex integer_literals("d+");
-    const std::regex string_literal("\"\w+\"");
+    const std::regex string_literal("([^\"]|\")*");
     const std::regex identifier_literal("(([A-Z]|[a-z]|_)([A-Z]|[0-9]|[a-z]|_)?)+");
 
     union TokenType {
@@ -122,7 +122,6 @@ namespace RCC {
         const std::string get_token_name() { return _token_name; }
         const TokenType get_token_type() { return _token_type; }
         inline bool is_set();
-        void print();
     };
 
 }

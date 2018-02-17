@@ -6,12 +6,12 @@
 
 #include "Token.h"
 #include "../Common/Util/ExceptionHandlingUtil.h"
+#include "../Common/Util/LogUtil.h"
 
 using namespace RCC;
 
 inline bool Token::is_set() {
-    // first character is \0 <=> string is empty
-    return (_token_name[0] != 0);
+    return (!_token_name.empty());
 }
 
 Token::Token(ct_str& token_name) {
@@ -19,6 +19,7 @@ Token::Token(ct_str& token_name) {
     try {
         _token_type.keyword_ = mapped_keywords.at(token_name);
         _token_name = token_name;
+        Log::load_log({LogLevel::DEBUG, "^ keyword"});
         return;
     }
     catch (std::exception &e) {
@@ -30,6 +31,7 @@ Token::Token(ct_str& token_name) {
    try {
        _token_type.operator_ = mapped_operators.at(token_name);
        _token_name = token_name;
+       Log::load_log({LogLevel::DEBUG, "^ operator"});
        return;
    }
    catch (std::exception& e) {
@@ -43,23 +45,23 @@ Token::Token(ct_str& token_name) {
 
         if (std::regex_match(token_name, integer_literals)) {
             _token_type.literal_ = LiteralTypes::LT_INT;
+            Log::load_log({LogLevel::DEBUG, "^ integer"});
         }
         else if (std::regex_match(token_name, decimal_literals)) {
             _token_type.literal_ = LiteralTypes::LT_DEC;
+            Log::load_log({LogLevel::DEBUG, "^ decimal"});
         }
         else if (std::regex_match(token_name, string_literal)) {
             _token_type.literal_ = LiteralTypes::LT_ID;
+            Log::load_log({LogLevel::DEBUG, "^ string"});
         }
         else if (std::regex_match(token_name, identifier_literal)) {
             _token_type.literal_ = LiteralTypes::LT_ID;
+            Log::load_log({LogLevel::DEBUG, "^ identifier"});
         }
         else {
             printf("#%s#", token_name);
             throw E("Invalid token name");
         }
     }
-}
-
-void Token::print() {
-    printf("Token: #%s#\n", _token_name.c_str());
 }
