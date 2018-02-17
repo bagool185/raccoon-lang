@@ -4,7 +4,6 @@
 #include <cstdio>
 #include <fstream>
 #include <algorithm>
-#include <ctime>
 
 #include "LogUtil.h"
 
@@ -16,7 +15,7 @@ void Log::load_log(const log_message& log) {
     _logs.emplace_back(log);
 }
 
-const char *Log::_log_to_string(LogLevel log) {
+const char* Log::_log_to_string(LogLevel log) {
     switch (log) {
         case LogLevel::INFO:
             return "INFO";
@@ -28,11 +27,24 @@ const char *Log::_log_to_string(LogLevel log) {
             return "DEBUG";
     }
 }
+/* save the logs into a file or print them to stdout if no parameter provided*/
+void Log::save_logs(FILE* outputstream) {
+    try {
+        load_log({LogLevel::INFO, "iterating through logs..."});
 
-void Log::print_logs() {
-    for (const auto &_ : _logs) {
-        printf("%s: %s\n", _log_to_string(_.first), _.second);
+        for (const auto &_ : _logs) {
+            fprintf(outputstream, "%s: %s\n", _log_to_string(_.first), _.second);
+        }
+
+        if (outputstream != stdout) {
+            load_log({LogLevel::INFO, "file successfully created"});
+            fclose(outputstream);
+        }
     }
+    catch (std::exception& e) {
+        load_log({LogLevel::ERROR, e.what()});
+    }
+
 }
 
 void Log::clear_logs() {
@@ -41,34 +53,4 @@ void Log::clear_logs() {
 /* clear the logs when terminated */
 Log::~Log() {
     clear_logs();
-}
-
-void Log::save_logs() {
-    const char* log_filename = "log_file";
-    std::string crt_time;
-
-    time_t rawtime;
-    time (&rawtime);
-
-    crt_time = ctime(&rawtime);
-    // remove spaces
-    crt_time.erase(std::remove_if(crt_time.begin(), crt_time.end(), isspace),
-                   crt_time.end());
-
-    try {
-        load_log({LogLevel::INFO, "iterating through logs"});
-        load_log({LogLevel::DEBUG, log_filename});
-
-        FILE* log_file = fopen(log_filename, "w");
-
-        for (const auto& _ : _logs) {
-            fprintf(log_file, ("%s %s\n", _log_to_string(_.first), _.second ));
-        }
-
-        fclose(log_file);
-    }
-    catch (std::exception& e) {
-        load_log({LogLevel::ERROR, e.what()});
-        print_logs();
-    }
 }

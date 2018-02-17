@@ -26,9 +26,8 @@ namespace RCC {
     public:
         ~Log();
         static void load_log(const log_message& log);
-        static void print_logs();
         static void clear_logs();
-        static void save_logs();
+        static void save_logs(FILE* outputstream = stdout);
     };
 }
 #endif //RACCOONLANG_LOGUTIL_H
