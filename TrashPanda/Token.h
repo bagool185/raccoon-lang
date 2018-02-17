@@ -102,7 +102,7 @@ namespace RCC {
 
     const std::regex decimal_literals("[0-9]*\\.?[0-9]+");
     const std::regex integer_literals("d+");
-    const std::regex string_literal("\"([^\\\"]|\\.)*\"");
+    const std::regex string_literal("\"\w+\"");
     const std::regex identifier_literal("(([A-Z]|[a-z]|_)([A-Z]|[0-9]|[a-z]|_)?)+");
 
     union TokenType {
@@ -113,12 +113,12 @@ namespace RCC {
 
     class Token {
         // prevent the creation of default constructor
-        Token() {}
+        Token() = default;
         // the token type and name will be set by the constructor
         std::string _token_name = "";
         TokenType _token_type;
     public:
-        Token(ct_str& token_type);
+        explicit Token(ct_str& token_type);
         const std::string get_token_name() { return _token_name; }
         const TokenType get_token_type() { return _token_type; }
         inline bool is_set();
