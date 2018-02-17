@@ -8,8 +8,6 @@
 #include "../Common/Util/ExceptionHandlingUtil.h"
 #include "../Common/Util/LogUtil.h"
 
-#define COMMENT "//"
-
 using namespace RCC;
 
 /* populate the data from the source file */
@@ -56,6 +54,7 @@ void Lexer::tokenise() {
                 _token_stack.push(new_token);
             }
             catch (std::exception& e) {
+                Log::load_log({LogLevel::ERROR, e.what()});
             }
         }
     }

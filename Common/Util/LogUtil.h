@@ -21,7 +21,7 @@ namespace RCC {
 
     class Log {
         static std::vector<log_message> _logs;
-        static const char * _log_to_string(LogLevel log);
+        static const char * _log_to_string(log_message log);
         Log() = default;
     public:
         ~Log();

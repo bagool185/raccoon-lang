@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <fstream>
 #include <algorithm>
+#include <cstdlib>
 
 #include "LogUtil.h"
 
@@ -15,25 +16,36 @@ void Log::load_log(const log_message& log) {
     _logs.emplace_back(log);
 }
 
-const char* Log::_log_to_string(LogLevel log) {
-    switch (log) {
+const char* Log::_log_to_string(log_message log) {
+    std::string log_level;
+    auto* full_message = (char*)malloc(255);
+
+    switch (log.first) {
         case LogLevel::INFO:
-            return "INFO";
+            log_level = "INFO";
+            break;
         case LogLevel::WARNING:
-            return "WARNING";
+            log_level = "WARNING";
+            break;
         case LogLevel::ERROR:
-            return "ERROR";
+            log_level = "ERROR";
+            break;
         case LogLevel::DEBUG:
-            return "DEBUG";
+            log_level = "DEBUG";
+            break;
     }
+
+    sprintf(full_message, "%s: %s\n", log_level.c_str(), log.second);
+
+    return full_message;
 }
 /* save the logs into a file or print them to stdout if no parameter provided*/
 void Log::save_logs(FILE* outputstream) {
     try {
         load_log({LogLevel::INFO, "iterating through logs..."});
 
-        for (const auto &_ : _logs) {
-            fprintf(outputstream, "%s: %s\n", _log_to_string(_.first), _.second);
+        for (const auto& _ : _logs) {
+            fputs(("%s", _log_to_string(_)), outputstream);
         }
 
         if (outputstream != stdout) {
@@ -44,7 +56,6 @@ void Log::save_logs(FILE* outputstream) {
     catch (std::exception& e) {
         load_log({LogLevel::ERROR, e.what()});
     }
-
 }
 
 void Log::clear_logs() {
