@@ -40,6 +40,8 @@ void Lexer::tokenise() {
     for (std::string& line : data_copy) {
         vect_s split_line = split(line, ' ');
 
+        Log::load_log({LogLevel::DEBUG, line.c_str()});
+
         for (ct_str& token : split_line) {
 
             if (token[0] == token[1] && token[0] == '/') {
