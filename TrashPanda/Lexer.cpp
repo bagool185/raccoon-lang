@@ -16,13 +16,11 @@ void Lexer::_populate_data() {
     std::string line;
 
     while (std::getline(instream, line)) {
-        // if line is not empty
+        // add the line only if it's not empty
         trim(line);
-        if (line.empty()) {
+        if (!line.empty()) {
             _data.push_back(line);
         }
-
-        _data.push_back(line);
     }
 
     instream.close();
