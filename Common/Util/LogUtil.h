@@ -21,6 +21,7 @@ namespace RCC {
 
     class Log {
         static std::vector<log_message> _logs;
+        static bool _logs_disabled;
         static const char * _log_to_string(log_message log);
         Log() = default;
     public:
@@ -28,6 +29,7 @@ namespace RCC {
         static void load_log(const log_message& log);
         static void clear_logs();
         static void save_logs(FILE* outputstream = stdout);
+        static void set_logs_state(bool state);
     };
 }
 #endif //RACCOONLANG_LOGUTIL_H

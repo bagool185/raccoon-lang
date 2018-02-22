@@ -9,10 +9,16 @@
 
 using namespace RCC;
 
+/* static members definitions */
 std::vector< log_message > Log::_logs;
+/* logs are enabled by default */
+bool Log::_logs_disabled = false;
 
 void Log::load_log(const log_message& log) {
-    _logs.emplace_back(log);
+    // only load a log if the logs aren't disabled
+    if (!_logs_disabled) {
+        _logs.emplace_back(log);
+    }
 }
 
 const char* Log::_log_to_string(log_message log) {
@@ -56,11 +62,18 @@ void Log::save_logs(FILE* outputstream) {
         load_log({LogLevel::ERROR, e.what()});
     }
 }
-
 void Log::clear_logs() {
     _logs.clear();
 }
-/* clear the logs when terminated */
+/* toggle the enable/disabled state of the logs */
+void Log::set_logs_state(const bool state) {
+    /**
+     * @param state: true for enabled, false for disabled
+     */
+    _logs_disabled = !state;
+}
+/* clear and disable the logs when terminated */
 Log::~Log() {
     clear_logs();
+    set_logs_state(false);
 }

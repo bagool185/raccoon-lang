@@ -9,8 +9,7 @@ int main() {
         RCC::Lexer test_lexer("../Tests/test_tokens.rcc");
 
         FILE* log_file = fopen("log_file.log", "w");
-        setbuf(log_file
-                , nullptr);
+        setbuf(log_file, nullptr);
         test_lexer.tokenise();
         RCC::Log::save_logs(log_file);
         RCC::Log::clear_logs();
