@@ -13,10 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e5796989-5499-4e2e-a02d-436c0109908a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Common/Util/LogUtil.cpp" afterPath="$PROJECT_DIR$/Common/Util/LogUtil.cpp" />
-      <change beforePath="$PROJECT_DIR$/Common/Util/LogUtil.h" afterPath="$PROJECT_DIR$/Common/Util/LogUtil.h" />
-      <change beforePath="$PROJECT_DIR$/TrashPanda/Lexer.cpp" afterPath="$PROJECT_DIR$/TrashPanda/Lexer.cpp" />
       <change beforePath="$PROJECT_DIR$/TrashPanda/Token.cpp" afterPath="$PROJECT_DIR$/TrashPanda/Token.cpp" />
+      <change beforePath="$PROJECT_DIR$/TrashPanda/Token.h" afterPath="$PROJECT_DIR$/TrashPanda/Token.h" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/RaccoonLang.exe" afterPath="$PROJECT_DIR$/cmake-build-debug/RaccoonLang.exe" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,103 +27,127 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LogUtil.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
-              <folding>
-                <element signature="e#42#59#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log_file.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmake-build-debug/log_file.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="105">
-              <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Token.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrashPanda/Token.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="46" column="56" lean-forward="false" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StringUtil.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Common/Util/StringUtil.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-              <folding>
-                <element signature="e#110#127#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lexer.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-              <folding>
-                <element signature="e#42#60#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Token.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrashPanda/Token.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="105" column="56" lean-forward="false" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
-              <folding>
-                <element signature="e#100#117#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lexer.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogUtil.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-              <folding>
-                <element signature="e#104#121#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5081967">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="LogUtil.cpp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="949">
+                  <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#42#59#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="log_file.log" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/cmake-build-debug/log_file.log">
+              <provider selected="true" editor-type-id="LogFileEditorProvider">
+                <state relative-caret-position="84">
+                  <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StringUtil.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Common/Util/StringUtil.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="445">
+                  <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#110#127#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Lexer.cpp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="265">
+                  <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+                  <folding>
+                    <element signature="e#42#60#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Token.h" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TrashPanda/Token.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="542">
+                  <caret line="127" column="60" lean-forward="true" selection-start-line="127" selection-start-column="60" selection-end-line="127" selection-end-column="60" />
+                  <folding>
+                    <element signature="e#100#117#0" expanded="true" />
+                    <element signature="e#4333#4345#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Lexer.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="168">
+                  <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="LogUtil.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="483">
+                  <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#104#121#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="LogUtil.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#104#121#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Token.cpp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TrashPanda/Token.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="565">
+                  <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#2161#2173#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>logger</find>
       <find>LogTypes</find>
       <find>printf</find>
+      <find>is_set</find>
     </findStrings>
     <replaceStrings>
       <replace>LogLevel</replace>
@@ -149,14 +172,14 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/cmake-build-debug/log_file.log" />
-        <option value="$PROJECT_DIR$/TrashPanda/Token.h" />
         <option value="$PROJECT_DIR$/Tests/test_tokens.rcc" />
         <option value="$PROJECT_DIR$/Common/Util/ExceptionHandlingUtil.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/TrashPanda/Token.cpp" />
-        <option value="$PROJECT_DIR$/Common/Util/LogUtil.h" />
         <option value="$PROJECT_DIR$/Common/Util/LogUtil.cpp" />
+        <option value="$PROJECT_DIR$/Common/Util/LogUtil.h" />
         <option value="$PROJECT_DIR$/TrashPanda/Lexer.cpp" />
+        <option value="$PROJECT_DIR$/TrashPanda/Token.cpp" />
+        <option value="$PROJECT_DIR$/TrashPanda/Token.h" />
       </list>
     </option>
   </component>
@@ -273,12 +296,14 @@
       <workItem from="1518907312827" duration="1306000" />
       <workItem from="1518987259800" duration="1738000" />
       <workItem from="1519073043564" duration="627000" />
-      <workItem from="1519340975838" duration="4928000" />
+      <workItem from="1519340975838" duration="5072000" />
+      <workItem from="1519346070250" duration="60000" />
+      <workItem from="1519399443920" duration="1654000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44709000" />
+    <option name="totallyTimeSpent" value="46567000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -295,13 +320,13 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17395833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36216217" sideWeight="0.49583334" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29081082" sideWeight="0.90729165" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29081082" sideWeight="0.9036458" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29528797" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22594595" sideWeight="0.528125" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22594595" sideWeight="0.471875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22594595" sideWeight="0.53229165" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22594595" sideWeight="0.46770832" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.49583334" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13645834" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36324325" sideWeight="0.45104167" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17621621" sideWeight="0.79583335" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -364,7 +389,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/TrashPanda/Token.cpp</url>
+          <line>76</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -374,7 +406,7 @@
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#43#60#0" expanded="false" />
+            <element signature="e#2161#2173#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -383,7 +415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -393,6 +424,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#100#117#0" expanded="true" />
+            <element signature="e#4333#4345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -445,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -454,7 +485,7 @@
         <state relative-caret-position="315">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="e#43#60#0" expanded="false" />
+            <element signature="e#2161#2173#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -463,7 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -473,6 +503,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#100#117#0" expanded="true" />
+            <element signature="e#4333#4345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -516,7 +547,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -525,7 +555,7 @@
         <state relative-caret-position="924">
           <caret line="44" column="49" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="45" selection-end-column="9" />
           <folding>
-            <element signature="e#43#60#0" expanded="false" />
+            <element signature="e#2161#2173#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -534,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,6 +573,7 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#100#117#0" expanded="true" />
+            <element signature="e#4333#4345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -644,14 +674,12 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -661,7 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,31 +713,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/logs.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
+        <state relative-caret-position="168">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrashPanda/Token.h">
+    <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="105" column="56" lean-forward="false" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="56" />
+        <state relative-caret-position="265">
+          <caret line="23" column="9" lean-forward="false" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
           <folding>
-            <element signature="e#100#117#0" expanded="true" />
+            <element signature="e#42#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/Util/StringUtil.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
+        <state relative-caret-position="445">
           <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
           <folding>
             <element signature="e#110#127#0" expanded="true" />
@@ -719,59 +756,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/logs.log">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log_file.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
-          <folding>
-            <element signature="e#104#121#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="84">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
+        <state relative-caret-position="949">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="e#42#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/log_file.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="105">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+    <entry file="file://$PROJECT_DIR$/Common/Util/LogUtil.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="e#104#121#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TrashPanda/Token.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="46" column="56" lean-forward="false" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
-          <folding />
+        <state relative-caret-position="565">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#2161#2173#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TrashPanda/Lexer.cpp">
+    <entry file="file://$PROJECT_DIR$/TrashPanda/Token.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state relative-caret-position="542">
+          <caret line="127" column="60" lean-forward="true" selection-start-line="127" selection-start-column="60" selection-end-line="127" selection-end-column="60" />
           <folding>
-            <element signature="e#42#60#0" expanded="true" />
+            <element signature="e#100#117#0" expanded="true" />
+            <element signature="e#4333#4345#0" expanded="true" />
           </folding>
         </state>
       </provider>

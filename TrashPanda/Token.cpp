@@ -64,3 +64,14 @@ Token::Token(ct_str& token_name) {
         }
     }
 }
+
+template <typename T>
+const T Token::get_token_type() {
+    switch(_token_type.union_type) {
+        case 0: return _token_type.operator_;
+        case 1: return _token_type.keyword_;
+        case 2: return _token_type.literal_;
+        default: return nullptr;
+    }
+}
+

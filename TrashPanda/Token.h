@@ -105,22 +105,29 @@ namespace RCC {
     const std::regex string_literal("([^\"]|\")*");
     const std::regex identifier_literal("(([a-zA-Z]|_)(\\w)?)+");
 
-    union TokenType {
-        OperatorTypes operator_;
-        KeywordTypes keyword_;
-        LiteralTypes literal_;
+    struct TokenType {
+        union {
+            OperatorTypes operator_;
+            KeywordTypes keyword_;
+            LiteralTypes literal_ = LiteralTypes::LT_ID;
+        };
+        // literal by default
+        size_t union_type = 2;
     };
+
 
     class Token {
         // prevent the creation of default constructor
         Token() = default;
         // the token type and name will be set by the constructor
         std::string _token_name = "";
+        // identifier by default
         TokenType _token_type;
     public:
         explicit Token(ct_str& token_type);
         const std::string get_token_name() { return _token_name; }
-        const TokenType get_token_type() { return _token_type; }
+        template <typename T>
+        const T get_token_type();
         inline bool is_set();
     };
 
