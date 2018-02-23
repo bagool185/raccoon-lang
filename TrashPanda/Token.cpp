@@ -19,7 +19,7 @@ Token::Token(ct_str& token_name) {
     try {
         _token_type.keyword_ = mapped_keywords.at(token_name);
         _token_name = token_name;
-        Log::load_log({LogLevel::DEBUG, "^ keyword"});
+        Log::load_log({LogLevel::DEBUG, token_name.c_str(), "keyword"});
         return;
     }
     catch (std::exception &e) {
@@ -31,7 +31,7 @@ Token::Token(ct_str& token_name) {
    try {
        _token_type.operator_ = mapped_operators.at(token_name);
        _token_name = token_name;
-       Log::load_log({LogLevel::DEBUG, "^ operator"});
+       Log::load_log({LogLevel::DEBUG, token_name.c_str(), "operator"});
        return;
    }
    catch (std::exception& e) {
@@ -45,22 +45,21 @@ Token::Token(ct_str& token_name) {
 
         if (std::regex_match(token_name, integer_literals)) {
             _token_type.literal_ = LiteralTypes::LT_INT;
-            Log::load_log({LogLevel::DEBUG, "^ integer"});
+            Log::load_log({LogLevel::DEBUG, token_name.c_str(), "integer"});
         }
         else if (std::regex_match(token_name, decimal_literals)) {
             _token_type.literal_ = LiteralTypes::LT_DEC;
-            Log::load_log({LogLevel::DEBUG, "^ decimal"});
+            Log::load_log({LogLevel::DEBUG, token_name.c_str(), "decimal"});
         }
         else if (std::regex_match(token_name, string_literal)) {
             _token_type.literal_ = LiteralTypes::LT_ID;
-            Log::load_log({LogLevel::DEBUG, "^ string"});
+            Log::load_log({LogLevel::DEBUG, token_name.c_str(), "string"});
         }
         else if (std::regex_match(token_name, identifier_literal)) {
             _token_type.literal_ = LiteralTypes::LT_ID;
-            Log::load_log({LogLevel::DEBUG, "^ identifier"});
+            Log::load_log({LogLevel::DEBUG, token_name.c_str(),"identifier"});
         }
         else {
-            printf("#%s#", token_name);
             throw E("Invalid token name");
         }
     }

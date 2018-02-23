@@ -21,11 +21,11 @@ void Log::load_log(const log_message& log) {
     }
 }
 
-const char* Log::_log_to_string(log_message log) {
+const char* Log::_log_to_string(const log_message& log) {
     std::string log_level;
     auto* full_message = (char*)malloc(255);
-
-    switch (log.first) {
+    // log level
+    switch (std::get<0>(log)) {
         case LogLevel::INFO:
             log_level = "INFO";
             break;
@@ -39,27 +39,27 @@ const char* Log::_log_to_string(log_message log) {
             log_level = "DEBUG";
             break;
     }
-
-    sprintf(full_message, "%s: %s\n", log_level.c_str(), log.second);
+    /* <log level>: <message> (description) */
+    sprintf(full_message, "%s: %s (%s) \n", log_level.c_str(), std::get<1>(log), std::get<2>(log));
 
     return full_message;
 }
 /* save the logs into a file or print them to stdout if no parameter provided*/
 void Log::save_logs(FILE* outputstream) {
     try {
-        load_log({LogLevel::INFO, "iterating through logs..."});
+        load_log({LogLevel::INFO, "iterating through logs...", ""});
 
         for (const auto& _ : _logs) {
             fputs(("%s", _log_to_string(_)), outputstream);
         }
 
         if (outputstream != stdout) {
-            load_log({LogLevel::INFO, "file successfully created"});
+            load_log({LogLevel::INFO, "file successfully created", ""});
             fclose(outputstream);
         }
     }
     catch (std::exception& e) {
-        load_log({LogLevel::ERROR, e.what()});
+        load_log({LogLevel::ERROR, e.what(), "in Log::save_logs()"});
     }
 }
 void Log::clear_logs() {

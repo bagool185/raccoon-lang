@@ -14,12 +14,13 @@ using namespace RCC;
 void Lexer::_populate_data() {
     std::ifstream instream(_data_filename);
     std::string line;
-
+    Log::load_log({LogLevel::INFO, "getting data for tokenizer", ""});
     while (std::getline(instream, line)) {
         // add the line only if it's not empty
         trim(line);
         if (!line.empty()) {
             _data.push_back(line);
+            Log::load_log({LogLevel::DEBUG, line.c_str(), " line read by tokenizer"});
         }
     }
 
@@ -33,12 +34,10 @@ void Lexer::tokenise() {
     _populate_data();
     vect_s data_copy = get_data();
 
-    Log::load_log({LogLevel::INFO, "iterating through tokens"});
+    Log::load_log({LogLevel::INFO, "iterating through tokens", ""});
 
     for (std::string& line : data_copy) {
         vect_s split_line = split(line, ' ');
-
-        Log::load_log({LogLevel::DEBUG, line.c_str()});
 
         for (ct_str& token : split_line) {
 
@@ -46,14 +45,12 @@ void Lexer::tokenise() {
                 break;
             }
 
-            Log::load_log({LogLevel::DEBUG, token.c_str()});
-
             try {
                 Token new_token(token);
                 _token_stack.push(new_token);
             }
             catch (std::exception& e) {
-                Log::load_log({LogLevel::ERROR, e.what()});
+                Log::load_log({LogLevel::ERROR, e.what(), "in Lexer::tokenise()"});
             }
         }
     }
