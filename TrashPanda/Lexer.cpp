@@ -20,8 +20,18 @@ Lexer::_populate_data() {
         // add the line only if it's not empty
         trim(line);
         if (!line.empty()) {
-            _data.push_back(line);
-            Log::load_log({LogLevel::DEBUG, _data.back().c_str(), " line read by tokenizer"});
+            vect_s split_line = split(line);
+
+            for (ct_str_ref token : split_line) {
+                // if it's comment, skip the line
+                if (token[0] == token[1] && token[0] == '/') {
+                    break;
+                }
+
+                _data.push_back(token);
+                // logs for debugging
+                // Log::load_log({LogLevel::DEBUG, _data.back().c_str(), " line read by tokenizer"});
+            }
         }
     }
 
@@ -38,26 +48,15 @@ Lexer::tokenise() {
 
     Log::load_log({LogLevel::INFO, "iterating through tokens", ""});
 
-    for (str_ref line : data_copy) {
-        Log::load_log({LogLevel::DEBUG, line.c_str(), "line in lexer"});
-
-        vect_s split_line = split(line, ' ');
-
-        for (ct_str_ref token : split_line) {
-
-            if (token[0] == token[1] && token[0] == '/') {
-                break;
-            }
-
-            try {
-                Log::load_log({LogLevel::DEBUG, token.c_str(),
-                               "token before being constructed" });
-                Token new_token(token);
-                _token_stack.push(new_token);
-            }
-            catch (std::exception& e) {
-                Log::load_log({LogLevel::ERROR, e.what(), "in Lexer::tokenise()"});
-            }
+    for (str_ref token : data_copy) {
+        try {
+            Log::load_log({LogLevel::DEBUG, token.c_str(),
+                           "token before being constructed" });
+            Token new_token(token);
+            _token_stack.push(new_token);
+        }
+        catch (std::exception& e) {
+            Log::load_log({LogLevel::ERROR, e.what(), "in Lexer::tokenise()"});
         }
     }
 }
