@@ -89,6 +89,9 @@
 		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/Common/Util/LogUtil.h">
 			<Option target="RaccoonLang"/>
 		</Unit>
+		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/Tests/test_tokens.cpp">
+			<Option target="RaccoonLang"/>
+		</Unit>
 		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/TrashPanda/Lexer.cpp">
 			<Option target="RaccoonLang"/>
 		</Unit>
