@@ -21,7 +21,7 @@ Lexer::_populate_data() {
         trim(line);
         if (!line.empty()) {
             _data.push_back(line);
-            Log::load_log({LogLevel::DEBUG, line.c_str(), " line read by tokenizer"});
+            Log::load_log({LogLevel::DEBUG, _data.back().c_str(), " line read by tokenizer"});
         }
     }
 
@@ -38,10 +38,10 @@ Lexer::tokenise() {
 
     Log::load_log({LogLevel::INFO, "iterating through tokens", ""});
 
-    for (std::string& line : data_copy) {
+    for (str_ref line : data_copy) {
         vect_s split_line = split(line, ' ');
 
-        for (ct_str& token : split_line) {
+        for (ct_str_ref token : split_line) {
 
             if (token[0] == token[1] && token[0] == '/') {
                 break;

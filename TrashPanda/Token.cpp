@@ -23,7 +23,6 @@ Token::Token(ct_str& token_name) {
         _token_name = token_name;
         _token_type.union_type = 1;
         Log::load_log({LogLevel::DEBUG, token_name.c_str(), "keyword"});
-        return;
     }
     catch (std::exception &e) {
         // if the key doesn't exist in the map
@@ -36,7 +35,6 @@ Token::Token(ct_str& token_name) {
        _token_name = token_name;
        _token_type.union_type = 0;
        Log::load_log({LogLevel::DEBUG, token_name.c_str(), "operator"});
-       return;
    }
    catch (std::exception& e) {
        // if the key doesn't exist in the map
@@ -65,8 +63,15 @@ Token::Token(ct_str& token_name) {
             Log::load_log({LogLevel::DEBUG, token_name.c_str(),"identifier"});
         }
         else {
+            Log::load_log({LogLevel::ERROR,token_name.c_str(), "invalid token name"});
             throw E("Invalid token name");
         }
+    }
+    /* if by this time the token hasn't been set, there's a problem */
+    if (!is_set()) {
+        Log::load_log({LogLevel::ERROR, token_name.c_str(),
+                       "this token hasn't been set correctly"});
+        throw E("Token hasn't been set correctly");
     }
 }
 
