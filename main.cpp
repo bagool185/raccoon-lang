@@ -5,7 +5,8 @@
 
 #include "Tests/test_tokens.h"
 
-int main() {
+int
+main() {
 
     try {
         RCC::Lexer test_lexer("../Tests/test_tokens.rcc");
@@ -14,7 +15,7 @@ int main() {
         setbuf(log_file, nullptr);
         test_lexer.tokenise();
         RCC::Log::save_logs(log_file);
-        RCC::Log::clear_logs();
+        // RCC::Log::clear_logs();
     }
     catch (std::exception& e) {
         printf("%s", e.what());

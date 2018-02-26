@@ -10,7 +10,9 @@
 
 using namespace RCC;
 
-inline bool Token::is_set() {
+/* check if a token has been initialised */
+inline bool
+Token::is_set() {
     return (!_token_name.empty());
 }
 
@@ -68,8 +70,8 @@ Token::Token(ct_str& token_name) {
     }
 }
 
-template <typename T>
-const T Token::get_token_type() {
+template <typename T> const T
+Token::get_token_type() {
     switch(_token_type.union_type) {
         case 0: return _token_type.operator_;
         case 1: return _token_type.keyword_;

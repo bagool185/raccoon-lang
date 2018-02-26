@@ -31,7 +31,8 @@ Lexer::_populate_data() {
  * tokens generated from the provided
  * data
  */
-void Lexer::tokenise() {
+void
+Lexer::tokenise() {
     _populate_data();
     vect_s data_copy = get_data();
 

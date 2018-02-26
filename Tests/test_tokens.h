@@ -8,7 +8,8 @@
 
 using namespace RCC;
 /* check if a given string is a pre-defined token */
-bool test_token(const std::string& literal) {
+const bool
+test_token(const std::string& literal) {
 
     try {
 

@@ -16,11 +16,9 @@ namespace RCC {
         E() = default;
 
     public:
-        explicit
-        E(const char *msg) : _msg(msg) {}
+        explicit E(const char *msg) : _msg(msg) {}
 
-        const char *
-        what() const throw() override { return _msg; }
+        const char *what() const throw() override { return _msg; }
     };
 }
 

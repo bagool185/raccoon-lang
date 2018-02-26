@@ -48,7 +48,8 @@ Log::_log_to_string(const log_message& log) {
     return full_message;
 }
 /* save the logs into a file or print them to stdout if no parameter provided*/
-void Log::save_logs(FILE* outputstream) {
+void
+Log::save_logs(FILE* outputstream) {
     try {
         load_log({LogLevel::INFO, "iterating through logs...", ""});
 
@@ -65,11 +66,13 @@ void Log::save_logs(FILE* outputstream) {
         load_log({LogLevel::ERROR, e.what(), "in Log::save_logs()"});
     }
 }
-void Log::clear_logs() {
+void
+Log::clear_logs() {
     _logs.clear();
 }
 /* toggle the enable/disabled state of the logs */
-void Log::set_logs_state(const bool state) {
+void
+Log::set_logs_state(const bool state) {
     /**
      * @param state: true for enabled, false for disabled
      */

@@ -12,24 +12,28 @@
 #include "types.h"
 
 /* trim the left-hand side of a string */
-static inline void ltrim(str_ref s) {
+static inline void
+ltrim(str_ref s) {
     s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int ch) {
         return !std::isspace(ch);
     }));
 }
 /* trim the right-hand side of a string */
-static inline void rtrim(str_ref s) {
+static inline void
+rtrim(str_ref s) {
     s.erase(std::find_if(s.rbegin(), s.rend(), [](int ch) {
         return !std::isspace(ch);
     }).base(), s.end());
 }
 /* trim a string */
-static inline void trim(str_ref s) {
+static inline void
+trim(str_ref s) {
     ltrim(s);
     rtrim(s);
 }
 /* split a string by a given delimiter */
-static inline vect_s split(str_ref s, const char delimiter=' ') {
+static inline vect_s
+split(str_ref s, const char delimiter=' ') {
     /**
      * @param s: string to be split
      * @param delimiter: delimiter by which the string will be split
