@@ -18,12 +18,12 @@ namespace RCC {
         DEBUG
     };
 
-    typedef std::tuple<const LogLevel, const char *, const char *> log_message;
+    typedef std::tuple<const LogLevel, const std::string, const std::string> log_message;
 
     class Log {
         static std::vector<log_message> _logs;
         static bool _logs_disabled;
-        static const char * _log_to_string(const log_message& log);
+        static const std::string _log_to_string(const log_message& log);
         Log() = default;
     public:
         ~Log();

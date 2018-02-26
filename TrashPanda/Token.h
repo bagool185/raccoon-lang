@@ -115,7 +115,6 @@ namespace RCC {
         size_t union_type = 2;
     };
 
-
     class Token {
         // prevent the creation of default constructor
         Token() = default;
@@ -125,7 +124,7 @@ namespace RCC {
         TokenType _token_type;
     public:
         explicit Token(ct_str& token_type);
-        const std::string get_token_name() { return _token_name; }
+        ct_str get_token_name() { return _token_name; }
         template <typename T>
         const T get_token_type();
         inline bool is_set();

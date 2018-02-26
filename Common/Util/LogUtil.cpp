@@ -21,7 +21,7 @@ void Log::load_log(const log_message& log) {
     }
 }
 
-const char* Log::_log_to_string(const log_message& log) {
+const std::string Log::_log_to_string(const log_message& log) {
     std::string log_level;
     auto* full_message = (char*)malloc(255);
     // log level
@@ -40,7 +40,8 @@ const char* Log::_log_to_string(const log_message& log) {
             break;
     }
     /* <log level>: <message> (description) */
-    sprintf(full_message, "%s: %s (%s) \n", log_level.c_str(), std::get<1>(log), std::get<2>(log));
+    sprintf(full_message, "%s: %s (%s) \n",
+            log_level.c_str(), std::get<1>(log).c_str(), std::get<2>(log).c_str());
 
     return full_message;
 }
@@ -49,8 +50,8 @@ void Log::save_logs(FILE* outputstream) {
     try {
         load_log({LogLevel::INFO, "iterating through logs...", ""});
 
-        for (const auto& _ : _logs) {
-            fputs(("%s", _log_to_string(_)), outputstream);
+        for (const log_message& _ : _logs) {
+            fputs(("%s", _log_to_string(_).c_str()), outputstream);
         }
 
         if (outputstream != stdout) {

@@ -19,6 +19,7 @@ Token::Token(ct_str& token_name) {
     try {
         _token_type.keyword_ = mapped_keywords.at(token_name);
         _token_name = token_name;
+        _token_type.union_type = 1;
         Log::load_log({LogLevel::DEBUG, token_name.c_str(), "keyword"});
         return;
     }
@@ -31,6 +32,7 @@ Token::Token(ct_str& token_name) {
    try {
        _token_type.operator_ = mapped_operators.at(token_name);
        _token_name = token_name;
+       _token_type.union_type = 0;
        Log::load_log({LogLevel::DEBUG, token_name.c_str(), "operator"});
        return;
    }
@@ -42,6 +44,7 @@ Token::Token(ct_str& token_name) {
     // if the token is not set yet, it will be a literal
     if (!is_set()) {
         _token_name = token_name;
+        _token_type.union_type = 2;
 
         if (std::regex_match(token_name, integer_literals)) {
             _token_type.literal_ = LiteralTypes::LT_INT;
