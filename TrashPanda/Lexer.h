@@ -10,10 +10,9 @@
 #include <stack>
 
 #include "Token.h"
+#include "../Common/Util/types.h"
 
 namespace RCC {
-
-    typedef std::vector<std::string> vect_s;
 
     class Lexer {
         std::string _data_filename = nullptr;

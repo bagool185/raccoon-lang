@@ -14,14 +14,16 @@ std::vector< log_message > Log::_logs;
 /* logs are enabled by default */
 bool Log::_logs_disabled = false;
 
-void Log::load_log(const log_message& log) {
+void
+Log::load_log(const log_message& log) {
     // only load a log if the logs aren't disabled
     if (!_logs_disabled) {
         _logs.emplace_back(log);
     }
 }
 
-const std::string Log::_log_to_string(const log_message& log) {
+ct_str
+Log::_log_to_string(const log_message& log) {
     std::string log_level;
     auto* full_message = (char*)malloc(255);
     // log level

@@ -9,6 +9,8 @@
 #include <cstdio>
 #include <tuple>
 
+#include "types.h"
+
 namespace RCC {
 
     enum class LogLevel {
@@ -23,7 +25,7 @@ namespace RCC {
     class Log {
         static std::vector<log_message> _logs;
         static bool _logs_disabled;
-        static const std::string _log_to_string(const log_message& log);
+        static ct_str _log_to_string(const log_message& log);
         Log() = default;
     public:
         ~Log();

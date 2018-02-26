@@ -9,9 +9,9 @@
 #include <regex>
 #include <map>
 
-namespace RCC {
+#include "../Common/Util/types.h"
 
-    typedef const std::string ct_str;
+namespace RCC {
 
     enum class OperatorTypes {
         // unary
@@ -123,7 +123,7 @@ namespace RCC {
         // identifier by default
         TokenType _token_type;
     public:
-        explicit Token(ct_str& token_type);
+        explicit Token(ct_str_ref token_type);
         ct_str get_token_name() { return _token_name; }
         template <typename T>
         const T get_token_type();

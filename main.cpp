@@ -3,6 +3,8 @@
 #include "TrashPanda/Lexer.h"
 #include "Common/Util/LogUtil.h"
 
+#include "Tests/test_tokens.h"
+
 int main() {
 
     try {

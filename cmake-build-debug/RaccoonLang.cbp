@@ -89,7 +89,10 @@
 		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/Common/Util/LogUtil.h">
 			<Option target="RaccoonLang"/>
 		</Unit>
-		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/Tests/test_tokens.cpp">
+		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/Common/Util/types.h">
+			<Option target="RaccoonLang"/>
+		</Unit>
+		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/Tests/test_tokens.h">
 			<Option target="RaccoonLang"/>
 		</Unit>
 		<Unit filename="C:/Users/bagool/CLionProjects/RaccoonLang/TrashPanda/Lexer.cpp">

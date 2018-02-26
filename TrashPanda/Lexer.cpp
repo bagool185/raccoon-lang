@@ -11,7 +11,8 @@
 using namespace RCC;
 
 /* populate the data from the source file */
-void Lexer::_populate_data() {
+void
+Lexer::_populate_data() {
     std::ifstream instream(_data_filename);
     std::string line;
     Log::load_log({LogLevel::INFO, "getting data for tokenizer", ""});
