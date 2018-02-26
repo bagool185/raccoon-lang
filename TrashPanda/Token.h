@@ -19,6 +19,7 @@ namespace RCC {
         OT_DECREMENT, // --
         OT_LSHIFT,    // <<
         OT_RSHIFT,    // >>
+        OT_POWER,     // **
         // binary
         OT_PLUS,      // +
         OT_MINUS,     // -
@@ -43,7 +44,8 @@ namespace RCC {
 
     enum class KeywordTypes {
         KT_DECL,	// let - declaration
-        KT_FUNC,	// function
+        KT_PRINT,   // print
+        KT_INPUT,   // input
         KT_IF,		// if statement
         KT_WHILE,	// while statement
         KT_TRUE,	// true (1)
@@ -69,6 +71,7 @@ namespace RCC {
         { "--", OperatorTypes::OT_DECREMENT },    // --
         { "<<", OperatorTypes::OT_LSHIFT    },    // <<
         { ">>", OperatorTypes::OT_RSHIFT    },    // >>
+        { "**", OperatorTypes::OT_POWER     },    // **
         // binary
         { "+", OperatorTypes::OT_PLUS   },     // +
         { "-", OperatorTypes::OT_MINUS  },     // -
@@ -93,7 +96,8 @@ namespace RCC {
 
     const std::map<ct_str, const KeywordTypes, comparator> mapped_keywords {
         { "let",      KeywordTypes::KT_DECL  },	 // let - declaration
-        { "function", KeywordTypes::KT_FUNC  },	 // function
+        { "print",    KeywordTypes::KT_PRINT },	 // print
+        { "input",    KeywordTypes::KT_INPUT },  // input
         { "if",       KeywordTypes::KT_IF	 },  // if statement
         { "while",    KeywordTypes::KT_WHILE },	 // while statement
         { "true",     KeywordTypes::KT_TRUE  },  // true
