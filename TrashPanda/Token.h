@@ -102,7 +102,7 @@ namespace RCC {
 
     const std::regex decimal_literals("[0-9]*\\.?[0-9]+");
     const std::regex integer_literals("\\d+");
-    const std::regex string_literal("([^\"]|\")*");
+    const std::regex string_literal("^\"[^\"\\\\]*(\\\\.[^\"\\\\]*)*\"$");
     const std::regex identifier_literal("(([a-zA-Z]|_)(\\w)?)+");
 
     struct TokenType {

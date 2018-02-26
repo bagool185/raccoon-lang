@@ -22,7 +22,7 @@ Token::Token(ct_str& token_name) {
         _token_type.keyword_ = mapped_keywords.at(token_name);
         _token_name = token_name;
         _token_type.union_type = 1;
-        Log::load_log({LogLevel::DEBUG, token_name.c_str(), "keyword"});
+        Log::load_log({LogLevel::DEBUG, _token_name.c_str(), "keyword"});
     }
     catch (std::exception &e) {
         // if the key doesn't exist in the map
@@ -34,7 +34,7 @@ Token::Token(ct_str& token_name) {
        _token_type.operator_ = mapped_operators.at(token_name);
        _token_name = token_name;
        _token_type.union_type = 0;
-       Log::load_log({LogLevel::DEBUG, token_name.c_str(), "operator"});
+       Log::load_log({LogLevel::DEBUG, _token_name.c_str(), "operator"});
    }
    catch (std::exception& e) {
        // if the key doesn't exist in the map
@@ -48,28 +48,31 @@ Token::Token(ct_str& token_name) {
 
         if (std::regex_match(token_name, integer_literals)) {
             _token_type.literal_ = LiteralTypes::LT_INT;
-            Log::load_log({LogLevel::DEBUG, token_name.c_str(), "integer"});
+            Log::load_log({LogLevel::DEBUG, _token_name.c_str(), "integer"});
         }
         else if (std::regex_match(token_name, decimal_literals)) {
             _token_type.literal_ = LiteralTypes::LT_DEC;
-            Log::load_log({LogLevel::DEBUG, token_name.c_str(), "decimal"});
+            Log::load_log({LogLevel::DEBUG, _token_name.c_str(), "decimal"});
         }
         else if (std::regex_match(token_name, string_literal)) {
             _token_type.literal_ = LiteralTypes::LT_ID;
-            Log::load_log({LogLevel::DEBUG, token_name.c_str(), "string"});
+           /* erase double quotes */
+            _token_name.erase(0, 1);
+            _token_name.erase(_token_name.end() - 1);
+            Log::load_log({LogLevel::DEBUG, _token_name.c_str(), "string"});
         }
         else if (std::regex_match(token_name, identifier_literal)) {
             _token_type.literal_ = LiteralTypes::LT_ID;
-            Log::load_log({LogLevel::DEBUG, token_name.c_str(),"identifier"});
+            Log::load_log({LogLevel::DEBUG, _token_name.c_str(),"identifier"});
         }
         else {
-            Log::load_log({LogLevel::ERROR,token_name.c_str(), "invalid token name"});
+            Log::load_log({LogLevel::ERROR, _token_name.c_str(), "invalid token name"});
             throw E("Invalid token name");
         }
     }
     /* if by this time the token hasn't been set, there's a problem */
     if (!is_set()) {
-        Log::load_log({LogLevel::ERROR, token_name.c_str(),
+        Log::load_log({LogLevel::ERROR, _token_name.c_str(),
                        "this token hasn't been set correctly"});
         throw E("Token hasn't been set correctly");
     }
