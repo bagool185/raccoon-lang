@@ -47,6 +47,7 @@ namespace RCC {
         KT_PRINT,   // print
         KT_INPUT,   // input
         KT_IF,		// if statement
+        KT_ELSE,    // else statement
         KT_WHILE,	// while statement
         KT_TRUE,	// true (1)
         KT_FALSE    // false (0)
@@ -99,6 +100,7 @@ namespace RCC {
         { "print",    KeywordTypes::KT_PRINT },	 // print
         { "input",    KeywordTypes::KT_INPUT },  // input
         { "if",       KeywordTypes::KT_IF	 },  // if statement
+        { "else",     KeywordTypes::KT_ELSE  },  // else statement
         { "while",    KeywordTypes::KT_WHILE },	 // while statement
         { "true",     KeywordTypes::KT_TRUE  },  // true
         { "false",    KeywordTypes::KT_FALSE }   // false
