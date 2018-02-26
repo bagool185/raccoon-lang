@@ -39,6 +39,8 @@ Lexer::tokenise() {
     Log::load_log({LogLevel::INFO, "iterating through tokens", ""});
 
     for (str_ref line : data_copy) {
+        Log::load_log({LogLevel::DEBUG, line.c_str(), "line in lexer"});
+
         vect_s split_line = split(line, ' ');
 
         for (ct_str_ref token : split_line) {
@@ -48,6 +50,8 @@ Lexer::tokenise() {
             }
 
             try {
+                Log::load_log({LogLevel::DEBUG, token.c_str(),
+                               "token before being constructed" });
                 Token new_token(token);
                 _token_stack.push(new_token);
             }
