@@ -6,10 +6,10 @@
 #include "Tests/test_tokens.h"
 
 int
-main() {
-
+main(int argc, char** argv) {
+    
     try {
-        RCC::Lexer test_lexer("../Tests/test_tokens.rcc");
+        RCC::Lexer test_lexer(argv[1]);
 
         FILE* log_file = fopen("log_file.log", "w");
         setbuf(log_file, nullptr);
@@ -20,7 +20,7 @@ main() {
     catch (std::exception& e) {
         printf("%s", e.what());
         RCC::Log::save_logs();
-        RCC::Log::clear_logs();
+        // RCC::Log::clear_logs();
     }
 
     return 0;

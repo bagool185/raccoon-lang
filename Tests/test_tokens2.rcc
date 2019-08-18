@@ -1,0 +1,6 @@
+let a = 2;
+
+if (a == 3) {
+    // prints stuff
+    print "aaaa"; // right here
+}

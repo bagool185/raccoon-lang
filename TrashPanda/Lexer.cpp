@@ -30,7 +30,7 @@ Lexer::_populate_data() {
 
                 _data.push_back(token);
                 // logs for debugging
-                // Log::load_log({LogLevel::DEBUG, _data.back().c_str(), " line read by tokenizer"});
+                Log::load_log({LogLevel::DEBUG, _data.back().c_str(), " line read by tokenizer"});
             }
         }
     }
@@ -46,9 +46,9 @@ Lexer::tokenise() {
     _populate_data();
     vect_s data_copy = get_data();
 
-    Log::load_log({LogLevel::INFO, "iterating through tokens", ""});
-
     for (str_ref token : data_copy) {
+        
+        Log::load_log({LogLevel::INFO, "iterating through tokens", ""});
         try {
             Log::load_log({LogLevel::DEBUG, token.c_str(),
                            "token before being constructed" });

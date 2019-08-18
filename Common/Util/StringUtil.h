@@ -46,14 +46,13 @@ split(str_ref line, const char delimiter=' ') {
     vect_s split_vect{ std::istream_iterator<std::string>{iss},
                        std::istream_iterator<std::string>{}};
 
-    /* logs for debugging
-     * RCC::Log::load_log({RCC::LogLevel::INFO, line.c_str(), "splitting line"});
-     *
-     * for (ct_str_ref _ : split_vect) {
-     *  RCC::Log::load_log({RCC::LogLevel::DEBUG, _.c_str(), "split token"});
-     * }
-     **/
-
+    // logs for debugging
+    // RCC::Log::load_log({RCC::LogLevel::INFO, line.c_str(), "splitting line"});
+    
+    // for (ct_str_ref _ : split_vect) {
+    //     RCC::Log::load_log({RCC::LogLevel::DEBUG, _.c_str(), "split token"});
+    // }
+    
     return split_vect;
 }
 
